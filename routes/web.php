@@ -8,6 +8,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('adminlte');
-});
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+require __DIR__.'/auth.php';
