@@ -37,8 +37,8 @@
 
         {{-- Email field --}}
         <div class="input-group mb-3">
-            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                   value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}">
+            <input type="text" name="login_id" class="form-control @error('login_id') is-invalid @enderror"
+                   value="{{ old('login_id') }}" placeholder="{{ __('ログインID') }}">
 
             <div class="input-group-append">
                 <div class="input-group-text">
@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            @error('email')
+            @error('login_id')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
