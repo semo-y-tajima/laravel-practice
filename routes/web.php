@@ -10,4 +10,6 @@ Route::get('/dashboard', function () {
     return view('adminlte');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+
 require __DIR__.'/auth.php';
