@@ -42,4 +42,12 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (User $user) {
+            $roles = Role::inRandomOrder()->take(2)->get();
+            $user->roles()->attach($roles);
+        });
+    }
 }
