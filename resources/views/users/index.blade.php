@@ -3,6 +3,10 @@
 @section('title', 'ユーザー一覧')
 
 @section('content_header')
+    @can('access-admin')
+        <!-- 管理者専用のリンクを表示 -->
+        <p>Admin Dashboard 権限確認用</p>
+    @endcan
     <h1>ユーザー一覧</h1>
     <div class="input-group">
         <input type="text" name="search" class="form-control" placeholder="ユーザー名で検索" value="{{ request()->get('search') }}">
